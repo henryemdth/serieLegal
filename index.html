@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SerieLegal - Cámara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+
+<body>
+    <div class="container" id="mainContainer">
+        <h1>Captura de Imagen</h1>
+        
+        <div class="option-selector">
+            <button class="option-btn" data-value="10">10</button>
+            <button class="option-btn" data-value="20">20</button>
+            <button class="option-btn" data-value="50">50</button>
+        </div>
+        
+        <p id="status">Cargando...</p>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video id="videoInput" playsinline autoplay muted></video>
+                <canvas id="canvasOutput"></canvas>
+                <div class="scan-overlay">
+                    <div class="scan-frame">
+                        <span class="scan-label">Coloca la serie aquí</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="cropCanvas" style="display: none;"></canvas>
+
+        <div class="controls">
+            <select id="cameraSelect">
+                <option value="">Cargando cámaras...</option>
+            </select>
+            <button id="startBtn" disabled>Iniciar Cámara</button>
+            <button id="captureBtn" disabled>Capturar Imagen</button>
+        </div>
+
+        <div id="capturedImageContainer" style="display: none;">
+            <h3>Imagen Capturada:</h3>
+            <img id="capturedImage" alt="Captura">
+        </div>
+
+        <div id="resultContainer" style="display: none;">
+            <h3>Resultado:</h3>
+            <div id="resultText" class="result-text"></div>
+            <div id="resultDetails" class="result-details"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
